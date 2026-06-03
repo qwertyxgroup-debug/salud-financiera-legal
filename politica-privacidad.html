@@ -40,6 +40,16 @@
       <td>Introducidos por ti en la App.</td>
     </tr>
     <tr>
+      <td>Fotos (opcional)</td>
+      <td>Imágenes que tú decides subir para personalizar tus metas de ahorro. Son privadas: solo tú puedes verlas y se asocian únicamente a tu cuenta.</td>
+      <td>Elegidas por ti desde la galería de tu dispositivo.</td>
+    </tr>
+    <tr>
+      <td>Comentarios y reportes (opcional)</td>
+      <td>Las sugerencias o reportes de errores que decides enviarnos desde la App, junto con tu correo electrónico, para poder dar seguimiento.</td>
+      <td>Enviados por ti voluntariamente.</td>
+    </tr>
+    <tr>
       <td>Identificadores</td>
       <td>Identificador de usuario de Firebase (para asociar tus datos a tu cuenta).</td>
       <td>Generado por los servicios de Google.</td>
@@ -55,18 +65,21 @@
   <ul>
     <li>Autenticarte y mantener tu sesión iniciada (Firebase Authentication).</li>
     <li>Guardar y sincronizar tus datos financieros entre tus dispositivos (Cloud Firestore).</li>
+    <li>Guardar las fotos que asocias a tus metas de ahorro para que las veas en todos tus dispositivos (Firebase Storage).</li>
+    <li>Atender y dar seguimiento a las sugerencias o reportes de errores que nos envías.</li>
     <li>Mostrar análisis, recordatorios y recomendaciones dentro de la App.</li>
     <li>Mejorar la estabilidad y el rendimiento (Firebase Analytics).</li>
   </ul>
 
   <h2>3. Almacenamiento de los datos</h2>
   <p>Tus datos se guardan: (a) <strong>localmente</strong> en tu dispositivo, y (b) en la <strong>nube</strong>
-  mediante Google Cloud Firestore asociados a tu cuenta. La transmisión se realiza cifrada (HTTPS/TLS).</p>
+  mediante Google Cloud Firestore (datos financieros) y Firebase Storage (las fotos de tus metas), asociados a
+  tu cuenta. La transmisión se realiza cifrada (HTTPS/TLS).</p>
 
   <h2>4. Servicios de terceros</h2>
   <p>La App utiliza servicios de Google que pueden tratar datos conforme a sus propias políticas:</p>
   <ul>
-    <li>Firebase Authentication, Cloud Firestore y Firebase Analytics — <a href="https://firebase.google.com/support/privacy">Privacidad de Firebase</a>.</li>
+    <li>Firebase Authentication, Cloud Firestore, Firebase Storage y Firebase Analytics — <a href="https://firebase.google.com/support/privacy">Privacidad de Firebase</a>.</li>
     <li>Política de privacidad de Google — <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</li>
   </ul>
 
