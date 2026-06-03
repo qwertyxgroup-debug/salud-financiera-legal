@@ -45,6 +45,16 @@
       <td>Elegidas por ti desde la galería de tu dispositivo.</td>
     </tr>
     <tr>
+      <td>Recordatorios de pago</td>
+      <td>Título, descripción opcional, fecha, hora, recurrencia y monto opcional de tus recordatorios.</td>
+      <td>Configurados por ti en la App. <strong>Se guardan solo en tu dispositivo</strong> (no se suben a la nube).</td>
+    </tr>
+    <tr>
+      <td>Preferencias locales</td>
+      <td>Divisa, orden de movimientos, modo de presupuesto (por categoría o 50/30/20) y clasificación de categorías. No incluyen datos financieros nuevos.</td>
+      <td>Generadas al usar la App. <strong>Se guardan solo en tu dispositivo.</strong></td>
+    </tr>
+    <tr>
       <td>Comentarios y reportes (opcional)</td>
       <td>Las sugerencias o reportes de errores que decides enviarnos desde la App, junto con tu correo electrónico, para poder dar seguimiento.</td>
       <td>Enviados por ti voluntariamente.</td>
@@ -66,15 +76,19 @@
     <li>Autenticarte y mantener tu sesión iniciada (Firebase Authentication).</li>
     <li>Guardar y sincronizar tus datos financieros entre tus dispositivos (Cloud Firestore).</li>
     <li>Guardar las fotos que asocias a tus metas de ahorro para que las veas en todos tus dispositivos (Firebase Storage).</li>
+    <li>Programar recordatorios de pago en tu teléfono (datos locales; la App solicita permiso de notificaciones).</li>
     <li>Atender y dar seguimiento a las sugerencias o reportes de errores que nos envías.</li>
-    <li>Mostrar análisis, recordatorios y recomendaciones dentro de la App.</li>
+    <li>Mostrar análisis y recomendaciones dentro de la App.</li>
     <li>Mejorar la estabilidad y el rendimiento (Firebase Analytics).</li>
   </ul>
 
   <h2>3. Almacenamiento de los datos</h2>
-  <p>Tus datos se guardan: (a) <strong>localmente</strong> en tu dispositivo, y (b) en la <strong>nube</strong>
-  mediante Google Cloud Firestore (datos financieros) y Firebase Storage (las fotos de tus metas), asociados a
-  tu cuenta. La transmisión se realiza cifrada (HTTPS/TLS).</p>
+  <p>Tus datos se guardan de dos formas:</p>
+  <ul>
+    <li><strong>En tu dispositivo:</strong> base de datos local, recordatorios de pago y preferencias (divisa, presupuestos 50/30/20, etc.). Estos datos <strong>no se sincronizan</strong> con la nube.</li>
+    <li><strong>En la nube (Firebase):</strong> gastos, ingresos, categorías, metas, presupuestos y fotos de metas, asociados a tu cuenta de Google. La transmisión se realiza cifrada (HTTPS/TLS).</li>
+  </ul>
+  <p>La App tiene desactivado el backup automático de Android para tus datos financieros sensibles.</p>
 
   <h2>4. Servicios de terceros</h2>
   <p>La App utiliza servicios de Google que pueden tratar datos conforme a sus propias políticas:</p>
@@ -83,33 +97,38 @@
     <li>Política de privacidad de Google — <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</li>
   </ul>
 
-  <h2>5. Publicidad</h2>
-  <p>Esta versión de la App <strong>no muestra anuncios</strong> y <strong>no utiliza el identificador de
-  publicidad (Advertising ID)</strong> de tu dispositivo. Si en el futuro incorporamos publicidad,
-  actualizaremos esta política antes de hacerlo.</p>
+  <h2>5. Publicidad y versión gratuita</h2>
+  <p>La versión actual de la App en Google Play es <strong>gratuita</strong>: todas las funciones están
+  disponibles <strong>sin pagos</strong> y <strong>sin anuncios</strong>. No utilizamos el identificador de
+  publicidad (Advertising ID) de tu dispositivo.</p>
+  <p>Si en el futuro incorporamos suscripciones Premium o publicidad, actualizaremos esta política y el
+  formulario de seguridad de datos de Google Play <strong>antes</strong> de activarlos.</p>
 
   <h2>6. Tus derechos y eliminación de datos</h2>
   <p>Puedes acceder, corregir y eliminar tus datos en cualquier momento:</p>
   <ul>
     <li><strong>Editar/eliminar registros:</strong> directamente dentro de la App.</li>
-    <li><strong>Eliminar tu cuenta y todos tus datos:</strong> en la App, ve a la pestaña
-      <strong>«Yo» → «Eliminar cuenta»</strong>. Esto borra de forma permanente tu cuenta y todos tus
-      datos del dispositivo y de la nube.</li>
+    <li><strong>Eliminar tu cuenta y todos tus datos en la nube:</strong> en la App, ve a la pestaña
+      <strong>«Yo» → «Eliminar cuenta»</strong>. Esto borra de forma permanente tu cuenta y tus datos
+      financieros del dispositivo y de Firebase (Firestore y fotos en Storage).</li>
+    <li><strong>Recordatorios locales:</strong> se borran al eliminar la cuenta o al desinstalar la App.</li>
     <li><strong>Solicitud por correo:</strong> también puedes escribirnos a <strong>qwertyxgroup@gmail.com</strong>
       para solicitar la eliminación de tus datos.</li>
   </ul>
 
   <h2>7. Conservación de los datos</h2>
-  <p>Conservamos tus datos mientras tu cuenta esté activa. Cuando eliminas tu cuenta, tus datos se borran
-  de forma permanente de nuestros sistemas (local y nube).</p>
+  <p>Conservamos tus datos en la nube mientras tu cuenta esté activa. Cuando eliminas tu cuenta, tus datos
+  se borran de forma permanente de nuestros sistemas en la nube. Los datos que solo existen en tu dispositivo
+  (recordatorios y preferencias) desaparecen al desinstalar la App o al eliminar la cuenta desde la App.</p>
 
   <h2>8. Menores de edad</h2>
   <p>La App no está dirigida a menores de 13 años (ni a la edad mínima aplicable en tu país) y no recopilamos
   conscientemente datos de menores.</p>
 
   <h2>9. Seguridad</h2>
-  <p>Aplicamos medidas razonables: cifrado en tránsito, reglas de acceso que restringen tus datos solo a tu
-  cuenta y minimización de datos. Ningún sistema es 100% infalible, pero trabajamos para protegerlos.</p>
+  <p>Aplicamos medidas razonables: cifrado en tránsito, reglas de acceso en Firebase que restringen tus datos
+  solo a tu cuenta, límites en subida de fotos (tamaño y tipo) y minimización de datos. Ningún sistema es
+  100% infalible, pero trabajamos para protegerlos.</p>
 
   <h2>10. Cambios en esta política</h2>
   <p>Podemos actualizar esta política. Publicaremos la versión vigente en esta página con su fecha de
